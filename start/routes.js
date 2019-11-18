@@ -16,12 +16,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get("hello", () => {
-    return { greeting: "Hello from the backend" };
-}).prefix("api")
-Route.post("post-example", () => {
-    return { greeting: "Nice post!" };
-}).prefix("api")
-
-// just forward to the client. This has to be the last route
-Route.any('*', ({view}) =>  view.render('app'))
+Route.get("/", 'IndexController.index').as('home')
+Route.post("/", 'IndexController.store')
+Route.delete("/", 'IndexController.destroy')
+Route.get("/about", 'AboutController.index')
