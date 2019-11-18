@@ -9,4 +9,6 @@ tmp
 .env
 
 # The development sqlite file
-database/development.sqlite
+database/*.sqlite
+
+public
